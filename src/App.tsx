@@ -4,6 +4,11 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import About from "./pages/About";
+import Academics from "./pages/Academics";
+import Admission from "./pages/Admission";
+import Research from "./pages/Research";
+import CampusLife from "./pages/CampusLife";
 
 const queryClient = new QueryClient();
 
@@ -15,6 +20,11 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/academics" element={<Academics />} />
+          <Route path="/admission" element={<Admission />} />
+          <Route path="/research" element={<Research />} />
+          <Route path="/campus-life" element={<CampusLife />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
