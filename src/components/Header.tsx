@@ -11,8 +11,14 @@ const Header = () => {
         {/* Top bar */}
         <div className="flex justify-between items-center py-2 text-sm border-b border-white/20">
           <div className="flex gap-4">
-            <a href="#" className="text-white/90 hover:text-white transition-colors duration-200 hover:scale-105 transform">Staff Login</a>
-            <a href="#" className="text-white/90 hover:text-white transition-colors duration-200 hover:scale-105 transform">Student Login</a>
+            <a 
+              href="https://aimsportal.iitbhilai.ac.in/iitbhAims/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-white/90 hover:text-white transition-colors duration-200 hover:scale-105 transform"
+            >
+              Student Login
+            </a>
           </div>
           <div className="flex gap-4">
             <a href="#" className="text-white/90 hover:text-white transition-colors duration-200 hover:scale-105 transform">Alumni</a>
