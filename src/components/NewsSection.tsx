@@ -13,17 +13,30 @@ const NewsSection = () => {
             </h2>
             <div className="space-y-4">
               {newsItems.map((item, index) => (
-                <div key={index} className="border-b pb-4 last:border-0 hover:bg-gray-50 transition-colors duration-200 p-2 rounded">
+                <motion.div
+                  key={index}
+                  whileHover={{ scale: 1.02 }}
+                  className="border-b pb-4 last:border-0 hover:bg-gray-50 transition-colors duration-200 p-2 rounded"
+                >
                   <p className="text-sm text-iit-secondary mb-1">{item.date}</p>
                   <a href="#" className="hover:text-iit-accent transition-colors duration-200 block">
                     {item.title}
                   </a>
-                </div>
+                </motion.div>
               ))}
             </div>
-            <Button variant="outline" className="mt-4 w-full hover:bg-iit-primary hover:text-white transition-colors duration-300">
-              View All News
-            </Button>
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Button 
+                variant="outline" 
+                className="mt-4 w-full group relative overflow-hidden"
+              >
+                <span className="absolute inset-0 bg-iit-primary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></span>
+                <span className="relative group-hover:text-white transition-colors duration-300">View All News</span>
+              </Button>
+            </motion.div>
           </div>
 
           {/* Announcements */}
@@ -33,16 +46,29 @@ const NewsSection = () => {
             </h2>
             <div className="space-y-4">
               {announcements.map((item, index) => (
-                <div key={index} className="border-b pb-4 last:border-0 hover:bg-gray-50 transition-colors duration-200 p-2 rounded">
+                <motion.div
+                  key={index}
+                  whileHover={{ scale: 1.02 }}
+                  className="border-b pb-4 last:border-0 hover:bg-gray-50 transition-colors duration-200 p-2 rounded"
+                >
                   <a href="#" className="hover:text-iit-accent transition-colors duration-200 block">
                     {item.title}
                   </a>
-                </div>
+                </motion.div>
               ))}
             </div>
-            <Button variant="outline" className="mt-4 w-full hover:bg-iit-secondary hover:text-white transition-colors duration-300">
-              View All Announcements
-            </Button>
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Button 
+                variant="outline" 
+                className="mt-4 w-full group relative overflow-hidden"
+              >
+                <span className="absolute inset-0 bg-iit-secondary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></span>
+                <span className="relative group-hover:text-white transition-colors duration-300">View All Announcements</span>
+              </Button>
+            </motion.div>
           </div>
 
           {/* Quick Links */}
@@ -52,13 +78,14 @@ const NewsSection = () => {
             </h2>
             <div className="grid grid-cols-2 gap-4">
               {quickLinks.map((link, index) => (
-                <a
+                <motion.a
                   key={index}
                   href="#"
-                  className="flex items-center gap-2 text-gray-700 hover:text-iit-accent transition-colors duration-200 hover:translate-x-1 transform p-2 rounded hover:bg-gray-50"
+                  whileHover={{ scale: 1.05, x: 4 }}
+                  className="flex items-center gap-2 text-gray-700 hover:text-iit-accent transition-colors duration-200 p-2 rounded hover:bg-gray-50"
                 >
                   {link}
-                </a>
+                </motion.a>
               ))}
             </div>
           </div>
