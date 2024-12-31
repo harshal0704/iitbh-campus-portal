@@ -59,6 +59,101 @@ This project is built with .
 - React
 - shadcn-ui
 - Tailwind CSS
+- Framer Motion
+- Radix UI
+
+## New Interactive Features
+
+This project now includes several new interactive features:
+
+- **Modals**: Implemented using Radix UI. These can be used to display important information or forms in a pop-up window.
+- **Dropdowns**: Implemented using Radix UI. These can be used to create interactive menus.
+- **Tooltips**: Enhanced with additional animations and customization options using Radix UI.
+
+## How to Use the New Components
+
+### Modal
+
+To use the modal component, import it and use it in your component as shown below:
+
+```jsx
+import Modal from "@/components/ui/modal";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+
+const ExampleComponent = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleModalOpen = () => setIsModalOpen(true);
+  const handleModalClose = () => setIsModalOpen(false);
+
+  return (
+    <div>
+      <Button onClick={handleModalOpen}>Open Modal</Button>
+      <Modal
+        title="Modal Title"
+        content="This is the modal content."
+        actions={<Button onClick={handleModalClose}>Close</Button>}
+        open={isModalOpen}
+        onOpenChange={setIsModalOpen}
+      />
+    </div>
+  );
+};
+
+export default ExampleComponent;
+```
+
+### Dropdown
+
+To use the dropdown component, import it and use it in your component as shown below:
+
+```jsx
+import Dropdown from "@/components/ui/dropdown";
+import { Button } from "@/components/ui/button";
+
+const ExampleComponent = () => {
+  const dropdownItems = [
+    { label: "Option 1", onClick: () => alert("Option 1 selected") },
+    { label: "Option 2", onClick: () => alert("Option 2 selected") },
+    { label: "Option 3", onClick: () => alert("Option 3 selected") },
+  ];
+
+  return (
+    <div>
+      <Dropdown trigger={<Button>Open Dropdown</Button>} items={dropdownItems} />
+    </div>
+  );
+};
+
+export default ExampleComponent;
+```
+
+### Tooltip
+
+To use the tooltip component, import it and use it in your component as shown below:
+
+```jsx
+import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
+import { Button } from "@/components/ui/button";
+
+const ExampleComponent = () => {
+  return (
+    <div>
+      <Tooltip>
+        <TooltipTrigger>
+          <Button>Hover me for tooltip</Button>
+        </TooltipTrigger>
+        <TooltipContent animation="fade-in" customClass="bg-gray-800 text-white">
+          This is a tooltip example.
+        </TooltipContent>
+      </Tooltip>
+    </div>
+  );
+};
+
+export default ExampleComponent;
+```
 
 ## How can I deploy this project?
 
